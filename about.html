@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>О компании — Акватория</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+
+<body class="has-fixed-header">
+
+<header class="header inner-header">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Акватория" class="logo-icon">
+        <span class="logo-text">АКВАТОРИЯ</span>
+    </a>
+
+    <nav class="nav">
+        <a href="boats.html">Катера</a>
+        <a href="activities.html">Активный отдых</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="about.html">О компании</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+
+    <div class="header-actions" id="header-actions">
+
+        <a href="login.html" class="login-link" id="header-login">Войти</a>
+
+        <a href="register.html" class="btn btn-light header-register" id="header-register">
+            Регистрация
+        </a>
+
+        <a href="profile.html" class="header-user" id="header-user" style="display: none;">
+            <span class="header-user-name" id="header-user-name"></span>
+        </a>
+
+        <button onclick="logout()" class="header-logout" id="header-logout" style="display: none;">
+            Выйти
+        </button>
+
+    </div>
+
+    <button class="menu-toggle" type="button" aria-label="Меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<section class="page-hero">
+
+    <p class="eyebrow dark">О КОМПАНИИ</p>
+
+    <h1>
+        Мы создаём<br>
+        <span>отдых на воде</span>
+    </h1>
+
+</section>
+
+
+<section class="section about-page">
+
+    <div class="about-map">
+        <script
+            type="text/javascript"
+            charset="utf-8"
+            async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afd474725b875f25a2e82b369c9a303479bc5f756e7576637cec438ca6fce2056&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+
+    <div>
+
+        <p class="eyebrow dark">АКВАТОРИЯ</p>
+
+        <h2>
+            Больше,<br>
+            чем просто<br>
+            <span>аренда катера</span>
+        </h2>
+
+        <p>
+            Наша задача — сделать отдых
+            на воде комфортным, красивым
+            и запоминающимся.
+        </p>
+
+        <p>
+            Мы предлагаем катера для прогулок,
+            активный отдых и возможность
+            провести время на воде с близкими.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section numbers">
+
+    <div>
+        <strong>10+</strong>
+        <span>катеров</span>
+    </div>
+
+    <div>
+        <strong>500+</strong>
+        <span>довольных клиентов</span>
+    </div>
+
+    <div>
+        <strong>4.9</strong>
+        <span>средняя оценка</span>
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="footer-logo">АКВАТОРИЯ</div>
+            <p>Отдых начинается<br>на воде.</p>
+        </div>
+
+        <div>
+            <h4>Навигация</h4>
+            <a href="boats.html">Катера</a>
+            <a href="activities.html">Активный отдых</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="reviews.html">Отзывы</a>
+        </div>
+
+        <div>
+            <h4>Компания</h4>
+            <a href="about.html">О компании</a>
+            <a href="captain.html">Капитанам</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+
+        <div>
+            <h4>Социальные сети</h4>
+            <a href="https://t.me/waterareasaratov">Telegram</a>
+            <a href="https://www.tiktok.com/@aquatoriaspace?is_from_webapp=1&sender_device=pc">TikTok</a>
+            <a href="https://www.instagram.com/invites/contact/?utm_content=fhrbmh1&stkn=4hjo96negru3">Instagram</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">© 2026 «Акватория»</div>
+
+</footer>
+
+
+<div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-nav">
+        <a href="index.html">Главная</a>
+        <a href="boats.html">Катера</a>
+        <a href="activities.html">Активный отдых</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="about.html">О компании</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</div>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>

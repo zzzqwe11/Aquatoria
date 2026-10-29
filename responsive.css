@@ -1,0 +1,152 @@
+
+@media (max-width: 1000px) {
+
+    .nav {
+        display: none;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    /* Отступы секций */
+    .section {
+        padding: 80px 5%;
+    }
+
+    .about-preview,
+    .about-page,
+    .contacts,
+    .captain-page,
+    .boat-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .boats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .client-gallery {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .client-gallery img {
+        height: 300px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .hero-content {
+        left: 5%;
+        right: 5%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading .text-link {
+        margin-top: 25px;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-card {
+        height: 400px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 400px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .boat-image {
+        height: 400px;
+    }
+
+    .activity-large > div {
+        padding: 50px 30px;
+    }
+
+    .activity-large h2 {
+        font-size: 50px;
+    }
+
+    .numbers {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .auth-box {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .profile-header {
+        display: block;
+    }
+
+    .profile-header .btn {
+        margin-top: 30px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .about-map {
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .about-map {
+        height: 320px;
+    }
+
+}

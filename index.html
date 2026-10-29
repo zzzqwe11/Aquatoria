@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Акватория — аренда катеров</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="boats.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Акватория" class="logo-icon">
+        <span class="logo-text">АКВАТОРИЯ</span>
+    </a>
+
+    <nav class="nav">
+        <a href="boats.html">Катера</a>
+        <a href="activities.html">Активный отдых</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="about.html">О компании</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+
+    <div class="header-actions" id="header-actions">
+
+        <a href="login.html" class="login-link" id="header-login">Войти</a>
+
+        <a href="register.html" class="btn btn-light header-register" id="header-register">
+            Регистрация
+        </a>
+
+        <a href="profile.html" class="header-user" id="header-user" style="display: none;">
+            <span class="header-user-name" id="header-user-name"></span>
+        </a>
+
+        <button onclick="logout()" class="header-logout" id="header-logout" style="display: none;">
+            Выйти
+        </button>
+
+    </div>
+
+    <button class="menu-toggle" type="button" aria-label="Меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<section class="hero">
+
+    <video autoplay muted loop playsinline class="hero-video">
+       <source src="images/video/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="eyebrow">АРЕНДА КАТЕРОВ · ОТДЫХ НА ВОДЕ</p>
+
+        <h1>
+            Ваша жизнь<br>
+            начинается<br>
+            <span>на воде</span>
+        </h1>
+
+        <p class="hero-description">
+            Прогулки, активный отдых и незабываемые
+            впечатления вместе с «Акваторией».
+        </p>
+
+        <div class="hero-buttons">
+            <a href="boats.html" class="btn btn-light">Выбрать катер</a>
+            <a href="about.html" class="btn btn-outline">О компании</a>
+        </div>
+
+    </div>
+
+    <div class="scroll-down">SCROLL ↓</div>
+
+</section>
+
+
+<section class="about-preview section">
+
+    <div class="image-block">
+        <img src="images/IMG_0089.jpg" alt="Акватория">
+    </div>
+
+    <div class="text-block">
+
+        <p class="eyebrow dark">О КОМПАНИИ</p>
+
+        <h2>
+            Отдых,<br>
+            который хочется
+            <span>повторить</span>
+        </h2>
+
+        <p>
+            «Акватория» — это аренда катеров,
+            прогулки по воде и активный отдых.
+            Мы создаём возможность провести
+            время с друзьями, семьёй или компанией
+            на воде.
+        </p>
+
+        <a href="about.html" class="text-link">Подробнее →</a>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow dark">НАШ ФЛОТ</p>
+
+            <h2>
+                Выберите свой<br>
+                <span>катер</span>
+            </h2>
+        </div>
+
+        <a href="boats.html" class="text-link">Все катера →</a>
+
+    </div>
+
+    <div id="featured-boats" class="boats-grid"></div>
+
+</section>
+
+
+<section class="video-banner">
+
+    <video autoplay muted loop playsinline>
+        <source src="images/video/video2.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay"></div>
+
+    <div class="video-text">
+
+        <p class="eyebrow">ОТДЫХ НА ВОДЕ</p>
+
+        <h2>
+            Здесь начинается<br>
+            ваш отдых
+        </h2>
+
+        <a href="gallery.html" class="btn btn-light">Смотреть галерею</a>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow dark">АКТИВНЫЙ ОТДЫХ</p>
+
+            <h2>
+                Больше, чем<br>
+                просто <span>прогулка</span>
+            </h2>
+        </div>
+
+        <a href="activities.html" class="text-link">Все развлечения →</a>
+
+    </div>
+
+    <div class="activities-grid">
+
+        <a href="activities.html#tube" class="activity-card">
+            <img src="images/buksiruemye_ballony_sunset_3_mestnye_4.jpg" alt="Ватрушка">
+            <div>
+                <h3>Ватрушка</h3>
+                <span>Подробнее →</span>
+            </div>
+        </a>
+
+        <a href="activities.html#ski" class="activity-card">
+            <img src="images/126-excursion-02.jpg" alt="Водные лыжи">
+            <div>
+                <h3>Водные лыжи</h3>
+                <span>Подробнее →</span>
+            </div>
+        </a>
+
+        <a href="activities.html#wake" class="activity-card">
+            <img src="images/578220.jpg" alt="Вейкборд">
+            <div>
+                <h3>Вейкборд</h3>
+                <span>Подробнее →</span>
+            </div>
+        </a>
+
+        <a href="activities.html#surf" class="activity-card">
+            <img src="images/D4F49E44-4F10-4B8D-8.jpeg.webp" alt="Серф">
+            <div>
+                <h3>Серф</h3>
+                <span>Подробнее →</span>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="area-banner">
+
+    <img src="images/IMG_0293.jpg" alt="Местная акватория">
+
+    <div class="dark-overlay"></div>
+
+    <div class="area-content">
+
+        <p class="eyebrow">НАША АКВАТОРИЯ</p>
+
+        <h2>
+            Увидеть знакомые<br>
+            места <span>по-новому</span>
+        </h2>
+
+        <p>
+            Красивые места, вода, простор и
+            незабываемые закаты.
+        </p>
+
+        <a href="area.html" class="btn btn-light">Исследовать акваторию</a>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow dark">НАШИ КЛИЕНТЫ</p>
+
+            <h2>
+                Моменты,<br>
+                которые <span>остаются</span>
+            </h2>
+        </div>
+
+        <a href="gallery.html" class="text-link">Вся галерея →</a>
+
+    </div>
+
+    <div class="client-gallery">
+
+        <img src="images/C6805DED-B1AF-4A2A-82B3-ACBA64F9FDF5.png" alt="">
+        <img src="images/IMG_0546.png" alt="">
+        <img src="images/IMG_0548.png" alt="">
+        <img src="images/B6F3A9A8-BA91-4266-BE87-DF69A71EC8A8.png" alt="">
+
+    </div>
+
+</section>
+
+
+<section class="section reviews-preview">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow dark">ОТЗЫВЫ</p>
+
+            <h2>
+                Нас выбирают<br>
+                снова и <span>снова</span>
+            </h2>
+        </div>
+
+        <a href="reviews.html" class="text-link">Все отзывы →</a>
+
+    </div>
+
+    <div id="home-reviews" class="reviews-grid"></div>
+
+</section>
+
+
+<section class="captain-banner">
+
+    <div class="captain-content">
+
+        <p class="eyebrow">ДЛЯ КАПИТАНОВ</p>
+
+        <h2>
+            У вас есть<br>
+            свой катер?
+        </h2>
+
+        <p>
+            Присоединяйтесь к «Акватории»,
+            размещайте своё судно и находите
+            новых клиентов.
+        </p>
+
+        <a href="captain.html" class="btn btn-light">Стать партнёром</a>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="footer-logo">АКВАТОРИЯ</div>
+            <p>Отдых начинается<br>на воде.</p>
+        </div>
+
+        <div>
+            <h4>Навигация</h4>
+            <a href="boats.html">Катера</a>
+            <a href="activities.html">Активный отдых</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="reviews.html">Отзывы</a>
+        </div>
+
+        <div>
+            <h4>Компания</h4>
+            <a href="about.html">О компании</a>
+            <a href="captain.html">Капитанам</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+
+        <div>
+            <h4>Социальные сети</h4>
+            <a href="https://t.me/waterareasaratov">Telegram</a>
+            <a href="https://www.tiktok.com/@aquatoriaspace?is_from_webapp=1&sender_device=pc">TikTok</a>
+            <a href="https://www.instagram.com/invites/contact/?utm_content=fhrbmh1&stkn=4hjo96negru3">Instagram</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">© 2026 «Акватория»</div>
+
+</footer>
+
+
+<div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-nav">
+        <a href="index.html">Главная</a>
+        <a href="boats.html">Катера</a>
+        <a href="activities.html">Активный отдых</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="about.html">О компании</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</div>
+
+
+<script src="main.js"></script>
+<script src="boats.js"></script>
+<script src="reviews.js"></script>
+
+</body>
+</html>

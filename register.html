@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Регистрация — Акватория</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-box">
+
+        <!-- Кнопка "Назад" -->
+        <button type="button" class="auth-back" onclick="goBack()" aria-label="Назад">
+            <span class="auth-back-arrow">←</span>
+            <span>Назад</span>
+        </button>
+
+        <a href="index.html" class="logo auth-logo">АКВАТОРИЯ</a>
+
+        <h1>Регистрация</h1>
+
+        <p>Создайте аккаунт клиента</p>
+
+        <form id="register-form">
+
+            <input type="text" id="register-name" placeholder="Ваше имя" required>
+            <input type="tel" id="register-phone" placeholder="Телефон" required>
+            <input type="email" id="register-email" placeholder="E-mail" required>
+            <input type="password" id="register-password" placeholder="Пароль" required>
+
+            <button class="btn btn-dark" type="submit">Зарегистрироваться</button>
+
+        </form>
+
+        <p class="auth-bottom">
+            Уже есть аккаунт?
+            <a href="login.html">Войти</a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="auth.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

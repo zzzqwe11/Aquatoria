@@ -1,0 +1,626 @@
+/* =========================================
+   КАТЕРА — КАРТОЧКИ
+========================================= */
+
+.boats-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    margin-top: 50px;
+}
+
+
+/* =========================================
+   КАРТОЧКА
+========================================= */
+
+.boat-card {
+    width: 100%;
+    min-width: 0;
+
+    background: #f5f5f2;
+    border: 1px solid #deded9;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   ГАЛЕРЕЯ
+========================================= */
+
+.boat-gallery {
+    position: relative;
+
+    width: 100%;
+    height: 360px;
+
+    background: #deded9;
+
+    overflow: hidden;
+}
+
+
+/* Фотография */
+
+.boat-main-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: transform 0.4s ease;
+}
+
+.boat-card:hover .boat-main-image {
+    transform: scale(1.02);
+}
+
+
+/* Если фотографии пока нет */
+
+.boat-gallery.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #deded9;
+}
+
+.boat-gallery.no-image::after {
+    content: "ФОТО КАТЕРА";
+
+    color: #888;
+
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   СТРЕЛКИ ГАЛЕРЕИ
+========================================= */
+
+.gallery-btn {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    background: rgba(0, 0, 0, 0.35);
+
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.gallery-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-prev {
+    left: 15px;
+}
+
+.gallery-next {
+    right: 15px;
+}
+
+
+/* =========================================
+   СЧЁТЧИК
+========================================= */
+
+.gallery-counter {
+    position: absolute;
+
+    right: 15px;
+    bottom: 15px;
+
+    z-index: 5;
+
+    padding: 7px 11px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: #fff;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   ИНФОРМАЦИЯ КАТЕРА
+========================================= */
+
+.boat-card-content {
+    width: 100%;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+}
+
+
+/* Категория */
+
+.boat-category {
+    margin: 0 0 10px;
+
+    color: #777;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* Название */
+
+.boat-card h2 {
+    margin: 0 0 14px;
+
+    color: #222;
+
+    font-size: 28px;
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* Описание */
+
+.boat-description {
+    margin: 0 0 25px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   ХАРАКТЕРИСТИКИ
+========================================= */
+
+.boat-specs {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin: 0 0 25px;
+
+    border-top: 1px solid #d8d8d3;
+    border-bottom: 1px solid #d8d8d3;
+
+    box-sizing: border-box;
+}
+
+.boat-spec {
+    min-width: 0;
+
+    padding: 17px 0;
+
+    box-sizing: border-box;
+}
+
+.boat-spec + .boat-spec {
+    padding-left: 22px;
+
+    border-left: 1px solid #d8d8d3;
+}
+
+
+/* Подпись */
+
+.spec-title {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+
+/* Значение */
+
+.boat-spec strong {
+    display: block;
+
+    color: #222;
+
+    font-size: 17px;
+    font-weight: 400;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   НИЖНЯЯ ЧАСТЬ
+========================================= */
+
+.boat-bottom {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   ЦЕНА
+========================================= */
+
+.boat-price {
+    position: static;
+    display: block;
+    width: auto;
+    min-width: 0;
+    margin: 0 0 25px 0;
+    padding: 0;
+    background: transparent;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+}
+
+.boat-price span {
+    display: block;
+    margin-bottom: 5px;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.boat-price strong {
+    display: block;
+    color: #222;
+    font-size: 20px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   КНОПКА "ПОДРОБНЕЕ"
+========================================= */
+
+.boat-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+    position: relative;
+    right: 0px;
+
+    min-width: 130px;
+
+    padding: 13px 20px;
+
+    box-sizing: border-box;
+
+    background: #222;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boat-button:hover {
+    background: #555;
+
+    color: #fff;
+
+    transform: translateY(-1px);
+}
+
+.boat-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   ФИЛЬТРЫ (в стиле gallery-filter)
+========================================= */
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 50px;
+}
+
+.filter {
+    appearance: none;
+
+    padding: 12px 24px;
+
+    border: 1px solid #111;
+    border-radius: 50px;
+
+    background: transparent;
+    color: #111;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.filter:hover {
+    transform: translateY(-2px);
+
+    background: #111;
+    color: #fff;
+}
+
+.filter.active {
+    background: #111;
+    color: #fff;
+}
+
+
+/* =========================================
+   АДАПТИВ
+========================================= */
+
+@media (max-width: 900px) {
+
+    .boats-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .boats-grid {
+        gap: 24px;
+        margin-top: 35px;
+    }
+
+    .boat-gallery {
+        height: 280px;
+    }
+
+    .boat-card-content {
+        padding: 22px;
+    }
+
+    .boat-card h2 {
+        font-size: 24px;
+    }
+
+    .boat-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .boat-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .boat-gallery {
+        height: 230px;
+    }
+
+    .boat-card-content {
+        padding: 18px;
+    }
+
+    .boat-spec strong {
+        font-size: 15px;
+    }
+
+}
+ 
+/* =========================================
+   СТРАНИЦА ОТДЕЛЬНОГО КАТЕРА
+========================================= */
+
+.boat-page-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    padding: 60px 6% 100px;
+    align-items: start;
+}
+
+.boat-page-gallery {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    background: #deded9;
+    overflow: hidden;
+}
+
+.boat-page-main-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boat-page-info {
+    padding-top: 20px;
+}
+
+.boat-page-info h1 {
+    margin: 15px 0 25px;
+    font-size: clamp(42px, 5vw, 70px);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: -3px;
+    color: #111;
+}
+
+.boat-page-description {
+    margin-bottom: 35px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.boat-page-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 35px;
+    border-top: 1px solid #d8d8d3;
+    border-bottom: 1px solid #d8d8d3;
+}
+
+.boat-page-specs .boat-spec {
+    padding: 20px 0;
+}
+
+.boat-page-specs .boat-spec + .boat-spec {
+    padding-left: 25px;
+    border-left: 1px solid #d8d8d3;
+}
+
+.boat-page-price {
+    margin-bottom: 35px;
+}
+
+.boat-page-price span {
+    display: block;
+    margin-bottom: 8px;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.boat-page-price strong {
+    display: block;
+    color: #222;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.boat-book-btn {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+
+    .boat-page-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 5% 80px;
+    }
+
+    .boat-page-gallery {
+        height: 500px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .boat-page-gallery {
+        height: 320px;
+    }
+
+    .boat-page-info h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .boat-book-btn {
+        max-width: 100%;
+    }
+
+}
