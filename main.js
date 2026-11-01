@@ -1,42 +1,21 @@
 /* =========================================
-   1. МОБИЛЬНОЕ МЕНЮ
+   МОБИЛЬНОЕ МЕНЮ
 ========================================= */
-function toggleMenu() {
-    const nav = document.querySelector(".nav");
-    if (nav) nav.classList.toggle("mobile-open");
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".menu-toggle");
     const menu = document.getElementById("mobile-menu");
-    if (!toggle || !menu) return;
-
-    toggle.addEventListener("click", function () {
-        const isOpen = menu.classList.toggle("active");
-        toggle.classList.toggle("active", isOpen);
-        document.body.classList.toggle("menu-open", isOpen);
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    menu.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            menu.classList.remove("active");
-            toggle.classList.remove("active");
-            document.body.classList.remove("menu-open");
+    if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+            const isOpen = menu.classList.toggle("active");
+            toggle.classList.toggle("active", isOpen);
+            document.body.classList.toggle("menu-open", isOpen);
         });
-    });
+    }
 });
 
 /* =========================================
-   2. КОМПЕНСАЦИЯ СКРОЛЛБАРА И ФОРМЫ
+   ФОРМЫ ОБРАТНОЙ СВЯЗИ
 ========================================= */
-function setScrollbarWidth() {
-    const width = window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.setProperty('--scrollbar-width', width + 'px');
-}
-document.addEventListener('DOMContentLoaded', setScrollbarWidth);
-window.addEventListener('resize', setScrollbarWidth);
-
 document.addEventListener("DOMContentLoaded", () => {
     const forms = document.querySelectorAll(".contact-form, .captain-form");
     forms.forEach(form => {
@@ -49,56 +28,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================
-   3. КНОПКА "НАЗАД"
-========================================= */
-function goBack() {
-    if (window.history.length > 1) window.history.back();
-    else window.location.href = "index.html";
-}
-
-/* =========================================
-   4. АВТОРИЗАЦИЯ В ХЕДЕРЕ
+   ОБНОВЛЕНИЕ ХЕДЕРА (ПРОФИЛЬ / ВОЙТИ)
 ========================================= */
 async function updateHeaderAuth() {
     if (!window.supabaseClient) return;
 
-    const loginBtn    = document.getElementById("header-login");
-    const registerBtn = document.getElementById("header-register");
-    const userBtn     = document.getElementById("header-user");
-    const userName    = document.getElementById("header-user-name");
-    const logoutBtn   = document.getElementById("header-logout"); // В старом HTML ID был такой
+    const loginBtn = document.getElementById("header-login");
+    const regBtn = document.getElementById("header-register");
+    const userBtn = document.getElementById("header-user");
+    const userName = document.getElementById("header-user-name");
+    const logoutBtn = document.getElementById("header-logout");
 
     if (!loginBtn) return;
 
-    // Привязываем выход
+    // Обработчик выхода
     if (logoutBtn && !logoutBtn.dataset.bound) {
         logoutBtn.dataset.bound = "true";
         logoutBtn.addEventListener("click", async (e) => {
             e.preventDefault();
-            try { await window.supabaseClient.auth.signOut(); } catch (err) {}
+            await window.supabaseClient.auth.signOut();
             window.location.href = "index.html";
         });
     }
 
-    try {
-        const { data: { session } } = await window.supabaseClient.auth.getSession();
+    const { data: { session } } = await window.supabaseClient.auth.getSession();
 
-        if (session && session.user) {
-            loginBtn.style.display = "none";
-            if (registerBtn) registerBtn.style.display = "none";
-            if (userBtn) userBtn.style.display = "inline-flex";
-            if (logoutBtn) logoutBtn.style.display = "inline-block";
-
-            const name = session.user.user_metadata?.full_name || session.user.email;
-            if (userName) userName.textContent = name;
-        } else {
-            loginBtn.style.display = "inline-block";
-            if (registerBtn) registerBtn.style.display = "inline-block";
-            if (userBtn) userBtn.style.display = "none";
-            if (logoutBtn) logoutBtn.style.display = "none";
-        }
-    } catch (e) {
-        console.error("Ошибка сессии:", e);
+    if (session) {
+        // Вошел
+        loginBtn.style.display = "none";
+        if (regBtn) regBtn.style.display = "none";
+        if (userBtn) userBtn.style.display = "inline-flex";
+        if (logoutBtn) logoutBtn.style.display = "inline-block";
+        
+        const name = session.user.user_metadata?.full_name || session.user.email;
+        if (userName) userName.textContent = name;
+    } else {
+        // Не вошел
+        loginBtn.style.display = "inline-block";
+        if (regBtn) regBtn.style.display = "inline-block";
+        if (userBtn) userBtn.style.display = "none";
+        if (logoutBtn) logoutBtn.style.display = "none";
     }
 }
 
@@ -108,3 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
         window.supabaseClient.auth.onAuthStateChange(() => updateHeaderAuth());
     }
 });
+
+/* =========================================
+   КНОПКА "НАЗАД"
+========================================= */
+function goBack() {
+    if (window.history.length > 1) window.history.back();
+    else window.location.href = "index.html";
+}
