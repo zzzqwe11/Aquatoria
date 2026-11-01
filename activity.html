@@ -59,6 +59,7 @@
 </header>
 
 
+<!-- ВАЖНО: именно этот контейнер ищет скрипт -->
 <main id="activity-page"></main>
 
 
@@ -112,15 +113,17 @@
     </nav>
 </div>
 
-<!-- Библиотека и настройки -->
+
+<!-- ПРАВИЛЬНЫЙ ПОРЯДОК СКРИПТОВ -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase.js"></script>
 <script src="auts.js"></script>
 <script src="main.js"></script>
 
-<!-- Специфичные скрипты страницы -->
+<!-- Скрипт отрисовки активности и бронирования -->
 <script src="telegram-config.js"></script>
-<script src="boats.js"></script>
-<script src="booking.js"></script>
+<script src="activities.js"></script>
+<script src="activity-booking.js"></script>
+
 </body>
 </html>
