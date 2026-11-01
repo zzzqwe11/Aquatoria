@@ -8,13 +8,20 @@ const activities = [
         name: "Ватрушка",
         category: "Ватрушка",
         shortDescription: "Яркое развлечение для тех, кто хочет получить максимум эмоций и скорости.",
-        description: "Ватрушка (бублик, тюбинг) — самое популярное развлечение на воде...",
+        description: "Ватрушка (бублик, тюбинг) — самое популярное развлечение на воде. Мы прицепим вас к катеру, и вы будете мчаться по волнам, держась за ручки. Подходит для компаний до 3 человек одновременно. Мы выдаём жилеты и проводим подробный инструктаж перед стартом.",
         price: "от 1 500 ₽ / сет",
         duration: "10 минут",
         capacity: "до 2 человек",
         location: "Г.Энгельс Поселок Лесной 7 база Наша Гавань",
-        included: ["Жилеты", "Инструктаж", "Катер", "Ватрушка"],
-        images: ["images/buksiruemye_ballony_sunset_3_mestnye_4.jpg"]
+        included: ["Жилеты для всех участников", "Инструктаж перед стартом", "Катер Style 215", "Ватрушка (тюбинг)", "Помощь инструктора на воде"],
+        // Возвращаем массив из 5 фотографий
+        images: [
+            "images/buksiruemye_ballony_sunset_3_mestnye_4.jpg",
+            "images/126-excursion-02.jpg",
+            "images/578220.jpg",
+            "images/D4F49E44-4F10-4B8D-8.jpeg.webp",
+            "images/550Evo_galery_obzor_01.jpg"
+        ]
     },
     {
         id: 2,
@@ -22,13 +29,19 @@ const activities = [
         name: "Водные лыжи",
         category: "Водные лыжи",
         shortDescription: "Скорость, вода и настоящее ощущение свободы.",
-        description: "Водные лыжи — классика активного отдыха на воде...",
+        description: "Водные лыжи — классика активного отдыха на воде. Подходит как новичкам, так и опытным райдерам. Для новичков — отдельный комплект широких лыж и подробный инструктаж. Опытным — возможность прокатиться на высокой скорости с виражами.",
         price: "от 3 500 ₽ / сет",
         duration: "15–20 минут",
-        capacity: "1 человек",
+        capacity: "1 человек за заезд",
         location: "Г.Энгельс Поселок Лесной 7 база Наша Гавань",
-        included: ["Лыжи", "Жилет", "Инструктаж", "Катер"],
-        images: ["images/126-excursion-02.jpg"]
+        included: ["Водные лыжи (2 пары)", "Жилет", "Инструктаж", "Катер Style 215", "Помощь инструктора"],
+        images: [
+            "images/126-excursion-02.jpg",
+            "images/buksiruemye_ballony_sunset_3_mestnye_4.jpg",
+            "images/578220.jpg",
+            "images/D4F49E44-4F10-4B8D-8.jpeg.webp",
+            "images/550Evo_galery_obzor_01.jpg"
+        ]
     },
     {
         id: 3,
@@ -36,13 +49,19 @@ const activities = [
         name: "Вейкборд",
         category: "Вейкборд",
         shortDescription: "Для тех, кто хочет освоить новые трюки и испытать себя.",
-        description: "Вейкборд — динамичное развлечение для тех, кто любит вызов...",
+        description: "Вейкборд — динамичное развлечение для тех, кто любит вызов. Мы поможем освоить базовые трюки, научим правильно стоять на доске и держать баланс. Отличный вариант для тех, кто уже пробовал водные лыжи и хочет большего.",
         price: "от 3 500 ₽ / сет",
         duration: "20 минут",
-        capacity: "1 человек",
+        capacity: "1 человек за заезд",
         location: "Г.Энгельс Поселок Лесной 7 база Наша Гавань",
-        included: ["Вейкборд", "Жилет", "Инструктаж", "Катер"],
-        images: ["images/578220.jpg"]
+        included: ["Вейкборд + крепления", "Жилет", "Инструктаж", "Катер-буксировщик", "Помощь инструктора"],
+        images: [
+            "images/578220.jpg",
+            "images/126-excursion-02.jpg",
+            "images/buksiruemye_ballony_sunset_3_mestnye_4.jpg",
+            "images/D4F49E44-4F10-4B8D-8.jpeg.webp",
+            "images/550Evo_galery_obzor_01.jpg"
+        ]
     },
     {
         id: 4,
@@ -50,13 +69,19 @@ const activities = [
         name: "Серф",
         category: "Серф",
         shortDescription: "Спокойный и красивый способ провести время на воде.",
-        description: "Серф — это не только спорт, но и медитация на воде...",
+        description: "Серф — это не только спорт, но и медитация на воде. Мы подберём доску под ваш уровень, поможем поймать волну и покажем красивые места акватории. Отличный вариант для тех, кто хочет спокойный и фотогеничный отдых.",
         price: "от 4 000 ₽ / сет",
         duration: "15 минут",
-        capacity: "1 человек",
+        capacity: "1 человек за заезд",
         location: "Г.Энгельс Поселок Лесной 7 база Наша Гавань",
-        included: ["Доска", "Гидрокостюм", "Инструктаж"],
-        images: ["images/D4F49E44-4F10-4B8D-8.jpeg.webp"]
+        included: ["Доска для серфа", "Гидрокостюм (по погоде)", "Инструктаж", "Сопровождение инструктора"],
+        images: [
+            "images/D4F49E44-4F10-4B8D-8.jpeg.webp",
+            "images/550Evo_galery_obzor_01.jpg",
+            "images/126-excursion-02.jpg",
+            "images/578220.jpg",
+            "images/buksiruemye_ballony_sunset_3_mestnye_4.jpg"
+        ]
     },
     {
         id: 5,
@@ -64,13 +89,19 @@ const activities = [
         name: "Рыбалка с гидом",
         category: "Рыбалка",
         shortDescription: "Отправляйтесь на рыбалку вместе с опытным гидом.",
-        description: "Рыбалка с гидом — для тех, кто хочет не просто отдых, а результат...",
+        description: "Рыбалка с гидом — для тех, кто хочет не просто отдых, а результат. Мы подберём место, расскажем о снастях, поможем с проводкой и подскажем, где искать рыбу. Все снасти включены в стоимость.",
         price: "от 5 000 ₽ / сет",
         duration: "от 3 часов",
         capacity: "до 2 человек",
         location: "Г.Энгельс Поселок Лесной 7 база Наша Гавань",
-        included: ["Снасти", "Гид", "Катер", "Жилеты", "Чай"],
-        images: ["images/550Evo_galery_obzor_01.jpg"]
+        included: ["Снасти и приманки", "Опытный гид", "Катер", "Жилеты", "Термос с чаем"],
+        images: [
+            "images/550Evo_galery_obzor_01.jpg",
+            "images/126-excursion-02.jpg",
+            "images/buksiruemye_ballony_sunset_3_mestnye_4.jpg",
+            "images/578220.jpg",
+            "images/D4F49E44-4F10-4B8D-8.jpeg.webp"
+        ]
     }
 ];
 
@@ -118,6 +149,7 @@ function renderActivityPage() {
         return;
     }
 
+    // Генерируем миниатюры для всех фотографий
     const thumbs = activity.images.map((src, index) => `
         <button type="button" class="activity-thumb ${index === 0 ? "active" : ""}" data-index="${index}">
             <img src="${src}" alt="">
@@ -130,7 +162,9 @@ function renderActivityPage() {
                 <div class="activity-main-photo">
                     <img class="activity-main-image" src="${activity.images[0]}" alt="${activity.name}">
                 </div>
-                <div class="activity-thumbs">${thumbs}</div>
+                <div class="activity-thumbs">
+                    ${thumbs}
+                </div>
             </div>
 
             <div class="activity-page-info">
@@ -166,7 +200,7 @@ function renderActivityPage() {
 
 
 /* =========================================
-   ГАЛЕРЕЯ НА СТРАНИЦЕ АКТИВНОСТИ
+   ГАЛЕРЕЯ НА СТРАНИЦЕ АКТИВНОСТИ (КЛИКИ ПО МИНИАТЮРАМ)
 ========================================= */
 function setupActivityGallery(activity) {
     const mainImage = document.querySelector(".activity-main-image");
@@ -176,7 +210,11 @@ function setupActivityGallery(activity) {
     thumbs.forEach(function (thumb) {
         thumb.addEventListener("click", function () {
             const index = Number(this.dataset.index);
+            
+            // Меняем главную фотографию
             mainImage.src = activity.images[index];
+            
+            // Переключаем активный класс на миниатюрах
             thumbs.forEach(t => t.classList.remove("active"));
             this.classList.add("active");
         });
