@@ -105,7 +105,8 @@ async function updateHeaderAuth() {
             // Делаем кнопку "Выйти" красивой (как "Регистрация")
             if (logoutBtn) {
                 logoutBtn.style.display = "inline-block";
-                logoutBtn.className = "btn btn-light header-logout"; 
+                // Добавляем классы btn и btn-light, чтобы кнопка стала овальной и светлой
+                logoutBtn.className = "header-logout btn btn-light"; 
             }
 
             const name = session.user.user_metadata?.full_name || session.user.email;
